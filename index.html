@@ -373,6 +373,53 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
   .ing{grid-template-columns:1fr 1fr;gap:10px}
   .ing div{padding:14px}
 }
+
+/* service shortcuts */
+.hero .in{min-width:0;max-width:calc(100% - 40px)}
+.hero{min-height:auto;padding:48px 0 60px}
+.hero-logo{width:clamp(130px,16vw,190px)!important}
+.hero h1{font-size:clamp(60px,10vw,140px)}
+.svc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:900px;margin:34px auto 0}
+.svc-card{display:grid;grid-template-columns:44px 1fr;grid-template-rows:auto auto;column-gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:16px;background:rgba(12,12,17,.72);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--text);text-decoration:none;cursor:pointer;font:inherit;transition:border-color .2s,transform .15s}
+.svc-card:hover{border-color:rgba(123,47,247,.7);transform:translateY(-2px)}
+.svc-ic{grid-row:1/3;width:44px;height:44px;border-radius:12px;background:var(--grad);display:grid;place-items:center}
+.svc-ic svg{width:22px;height:22px}
+.svc-t{font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:20px;line-height:1;white-space:nowrap}
+.svc-d{font-size:13px;color:var(--mute);line-height:1.3}
+.hero .chips{margin-top:20px}
+/* meal prep */
+.steps{list-style:none;counter-reset:st;padding:0;margin:0 0 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.steps li{counter-increment:st;background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:18px 20px 18px 66px;position:relative}
+.steps li::before{content:counter(st);position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--head);font-weight:900;font-size:20px}
+.steps b{display:block;font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:22px;line-height:1.1}
+.steps span{color:var(--mute);font-size:14.5px}
+.mp-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+#f-mp{background:var(--s1)}
+.mp-side{display:grid;gap:14px;position:sticky;top:90px}
+.mp-sum{border-radius:16px;padding:18px 20px;background:var(--grad-soft);border:1px solid var(--line)}
+.mp-sum small{color:var(--mute);font-weight:600}
+.mp-sum b{display:block;font-family:var(--head);font-weight:900;font-style:italic;text-transform:uppercase;font-size:36px;color:var(--yellow);line-height:1;margin:4px 0 6px}
+.mp-sum span{color:#D6D6DE;font-size:15px}
+@media (max-width:860px){.mp-grid{grid-template-columns:1fr}.mp-side{position:static;order:-1}.steps{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .svc-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:28px 0 0;padding:0 0 6px;scrollbar-width:none;max-width:100%}
+  .svc-t{white-space:normal}
+  .svc-row::-webkit-scrollbar{display:none}
+  .svc-card{flex:0 0 46%;scroll-snap-align:start;grid-template-columns:1fr;grid-template-rows:auto;row-gap:8px;padding:14px}
+  .svc-ic{grid-row:auto;width:40px;height:40px}
+  .svc-t{font-size:19px}
+  .hero .chips{display:none}
+  .hero{padding:28px 0 36px}
+  .hero-logo{width:104px!important;margin-bottom:14px}
+  .hero h1{font-size:clamp(46px,13vw,58px)}
+  .hero .lede{margin:14px auto 0;font-size:16px}
+  .hero .btns{display:none}
+  .svc-row{margin-top:22px}
+  .steps li{padding:14px 14px 14px 58px}
+  .steps li::before{left:14px;top:14px;width:30px;height:30px;font-size:18px}
+  .steps b{font-size:19px}
+  .mp-side .photo{display:none}
+}
 /* reduced motion */
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.btn,.combo,.card{transition:none}}
 
@@ -464,6 +511,7 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
       <button type="button" data-go="temporada">Especiales</button>
       <button type="button" data-go="catering">Catering</button>
       <button type="button" data-go="salon">Salón</button>
+      <button type="button" data-go="mealprep">Meal prep</button>
       <button type="button" data-go="visitanos">Visítanos</button>
     </nav>
     <a class="mark" href="#parrilla" aria-label="Inicio, La Parrilla Brava"><img src="img/logo.png" alt="Lechonera La Parrilla Brava"></a>
@@ -495,6 +543,7 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
         <a class="btn grad" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20La%20Parrilla%20Brava"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Pide por WhatsApp</a>
         <button class="btn ghost" type="button" data-go="menu">Ver el menú</button>
       </div>
+      <nav class="svc-row" aria-label="Servicios"><button class="svc-card" type="button" data-go="menu"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><span class="svc-t">Ordenar comida</span><span class="svc-d">Almuerzos y por libra</span></button><button class="svc-card" type="button" data-go="catering"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c3 0 6 1.8 6 5.5"/></svg></span><span class="svc-t">Catering</span><span class="svc-d">De 10 a 50 personas</span></button><button class="svc-card" type="button" data-go="salon"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></span><span class="svc-t">Salón de eventos</span><span class="svc-d">Alquílalo para tu actividad</span></button><button class="svc-card" type="button" data-go="mealprep"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 12h18"/><path d="M8 7V4h8v3"/></svg></span><span class="svc-t">Meal prep</span><span class="svc-d">Entrega por rutas en PR</span></button><button class="svc-card" type="button" data-go="temporada"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.8 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span><span class="svc-t">Especiales</span><span class="svc-d">Thanksgiving y Navidad</span></button><a class="svc-card" href="#club-brava"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10l-1 7a4 4 0 0 1-8 0L7 3z"/><path d="M12 14v6M8 21h8"/></svg></span><span class="svc-t">Club Brava</span><span class="svc-d">Restaurant, lounge y bar</span></a></nav>
       <div class="chips"><span class="chip">Salón comedor</span><span class="chip">Carry out</span><span class="chip">Delivery</span><span class="chip">ATH Móvil</span></div>
     </div>
   </div>
@@ -510,6 +559,7 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
         <li>Almuerzos desde <b>$12</b></li>
         <li>Catering de 10 a 50 personas</li>
         <li>Alquila nuestro salón de eventos</li>
+        <li>Meal prep con entrega por rutas</li>
         <li>Delivery y carry out</li>
       </ul>
       <ul aria-hidden="true">
@@ -521,6 +571,7 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
         <li>Almuerzos desde <b>$12</b></li>
         <li>Catering de 10 a 50 personas</li>
         <li>Alquila nuestro salón de eventos</li>
+        <li>Meal prep con entrega por rutas</li>
         <li>Delivery y carry out</li>
       </ul>
     </div>
@@ -708,6 +759,51 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
           <a class="btn grad" id="s-send" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Consultar disponibilidad</a>
           <p class="hint">Te confirmamos fecha y precio por WhatsApp.</p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="mealprep">
+    <div class="wrap">
+      <div class="head-row"><div><h2 class="big" data-t="Meal prep">Meal prep</h2><p class="sub">Comida de la casa lista para tu semana. Escoge cuántas comidas, tus proteínas y acompañantes, y te la llevamos en nuestra ruta por Puerto Rico.</p></div></div>
+      <ol class="steps">
+        <li><b>Escoge</b><span>Cantidad de comidas, proteínas y acompañantes.</span></li>
+        <li><b>Envía tu orden</b><span>Por WhatsApp, con tu pueblo y región.</span></li>
+        <li><b>Recibe en tu ruta</b><span>Te confirmamos precio, día y hora de entrega.</span></li>
+      </ol>
+      <div class="mp-grid">
+        <form class="builder" id="f-mp" onsubmit="return false" aria-label="Pedir meal prep">
+          <div class="field"><span class="lbl" id="l-mpn">Comidas por semana</span>
+            <div class="seg" role="group" aria-labelledby="l-mpn" data-name="mpn" data-single>
+              <button type="button" aria-pressed="true">5</button><button type="button" aria-pressed="false">10</button><button type="button" aria-pressed="false">15</button><button type="button" aria-pressed="false">20</button>
+            </div>
+          </div>
+          <div class="field"><span class="lbl" id="l-mpp">Proteínas</span>
+            <div class="pick" role="group" aria-labelledby="l-mpp" data-name="mpp">
+              <button type="button" aria-pressed="true">Lechón asado</button><button type="button" aria-pressed="false">Pechuga a la parrilla</button><button type="button" aria-pressed="false">Churrasco</button><button type="button" aria-pressed="false">Camarones</button><button type="button" aria-pressed="false">Carne frita</button><button type="button" aria-pressed="false">Chuleta a la parrilla</button>
+            </div>
+          </div>
+          <div class="field"><span class="lbl" id="l-mps">Acompañantes</span>
+            <div class="pick" role="group" aria-labelledby="l-mps" data-name="mps">
+              <button type="button" aria-pressed="true">Arroz con gandules</button><button type="button" aria-pressed="false">Batata</button><button type="button" aria-pressed="false">Verduras hervidas</button><button type="button" aria-pressed="false">Ensalada de coditos</button><button type="button" aria-pressed="false">Maduros</button><button type="button" aria-pressed="false">Tostones</button>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="mp-region">Región</label>
+              <select id="mp-region"><option>Este</option><option>Área metro</option><option>Norte</option><option>Centro</option><option>Sur</option><option>Oeste</option></select></div>
+            <div class="field"><label for="mp-pueblo">Pueblo</label><input id="mp-pueblo" type="text" placeholder="Ej. Humacao"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="mp-nombre">Tu nombre</label><input id="mp-nombre" type="text" autocomplete="name"></div>
+            <div class="field"><label for="mp-nota">Nota</label><input id="mp-nota" type="text" placeholder="Ej. sin cebolla, porción grande"></div>
+          </div>
+          <a class="btn grad" id="mp-send" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Pedir meal prep por WhatsApp</a>
+          <p class="hint">Te respondemos con el precio de tu plan y el día que pasa la ruta por tu pueblo.</p>
+        </form>
+        <div class="mp-side">
+          <div class="photo"><img src="img/complementos.jpg" alt="Comida de la casa: maduros, escabeche, guineos y verduras" loading="lazy"></div>
+          <div class="mp-sum" aria-live="polite"><small>Tu plan</small><b id="mp-sum-n">5 comidas</b><span id="mp-sum-d">Lechón asado con arroz con gandules</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -946,8 +1042,18 @@ body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DF
       '- Comida: '+v('s-comida')+
       (v('s-nombre')?'\n- Nombre: '+v('s-nombre'):'');
     document.getElementById('s-send').href='https://wa.me/19392312872?text='+encodeURIComponent(m2);
+    var mpn=vals('f-mp','mpn')[0]||'5', mpp=vals('f-mp','mpp'), mps=vals('f-mp','mps');
+    var m3='Hola, quiero ordenar meal prep.\n'+
+      '- Comidas por semana: '+mpn+'\n'+
+      '- Proteínas: '+(mpp.join(', ')||'por definir')+'\n'+
+      '- Acompañantes: '+(mps.join(', ')||'por definir')+'\n'+
+      '- Entrega: '+(v('mp-pueblo')||'(pueblo)')+', región '+v('mp-region')+
+      (v('mp-nombre')?'\n- Nombre: '+v('mp-nombre'):'')+(v('mp-nota')?'\n- Nota: '+v('mp-nota'):'');
+    document.getElementById('mp-send').href='https://wa.me/19392312872?text='+encodeURIComponent(m3);
+    document.getElementById('mp-sum-n').textContent=mpn+' comidas';
+    document.getElementById('mp-sum-d').textContent=(mpp.join(', ')||'Escoge tus proteínas')+(mps.length?' con '+mps.join(', ').toLowerCase():'');
   }
-  document.querySelectorAll('#f-cater input,#f-salon input,#f-salon select').forEach(function(i){i.addEventListener('input',update);i.addEventListener('change',update);});
+  document.querySelectorAll('#f-cater input,#f-salon input,#f-salon select,#f-mp input,#f-mp select').forEach(function(i){i.addEventListener('input',update);i.addEventListener('change',update);});
   update();
 
 
