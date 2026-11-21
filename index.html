@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Parrilla Brava · Lechonera en Naguabo</title>
+<meta name="description" content="Lechonera La Parrilla Brava: lechón asado del país, almuerzos, catering y especiales de temporada en Carr. 31, Peña Pobre, Naguabo. Y Club Brava Restaurant por el Chef Lando Aponte.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --s1:#0C0C11;
+  --s2:#15151D;
+  --line:rgba(255,255,255,.09);
+  --text:#F2F2F5;
+  --mute:#A3A3B2;
+  --blue:#1E5BFF;
+  --purple:#7B2FF7;
+  --yellow:#FFD21A;
+  --brown:#7A4B2A;
+  --gold:#E2B85C;
+  --grad:linear-gradient(115deg,#1E5BFF 0%,#7B2FF7 55%,#09090D 100%);
+  --grad-soft:linear-gradient(115deg,rgba(30,91,255,.22),rgba(123,47,247,.18) 60%,rgba(0,0,0,0));
+  --head:'Big Shoulders Display',Impact,sans-serif;
+  --body:'Barlow',system-ui,sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55}
+body.club{--yellow:var(--gold)}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.view[hidden]{display:none}
+main.view{overflow-x:clip}
+.combo h3,.offer h3,.sweet h3,.dish h3{overflow-wrap:anywhere}
+h1,h2,h3{font-family:var(--head);font-weight:900;text-transform:uppercase;line-height:.92;margin:0;letter-spacing:.5px}
+h2{font-size:clamp(44px,6vw,76px);font-style:italic}
+.sub{color:var(--mute);max-width:56ch;margin:14px 0 0}
+section{padding:88px 0;scroll-margin-top:72px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,.18);background:transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.grad{background:var(--grad);border-color:rgba(255,255,255,.14);box-shadow:0 10px 30px -12px rgba(123,47,247,.75)}
+.btn.grad:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(30,91,255,.85)}
+.btn.ghost:hover{border-color:rgba(255,255,255,.5)}
+.btn.sm{min-height:40px;padding:0 16px;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:72px;gap:16px}
+.links{display:flex;gap:22px;font-weight:600;font-size:15px}
+.links button{background:none;border:0;padding:6px 0;cursor:pointer;color:var(--mute)}
+.links button:hover{color:var(--text)}
+.mark img{width:54px;height:auto}
+.right{display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.switch{display:flex;background:var(--s2);border:1px solid var(--line);border-radius:999px;padding:4px}
+.switch a{text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;color:var(--mute);white-space:nowrap}
+.switch a[aria-current="page"]{background:var(--grad);color:#fff}
+.mswitch{display:none}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 72px);display:grid;place-items:center;text-align:center;overflow:hidden;padding:64px 0 80px}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);filter:saturate(1.1)}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 50% at 50% 38%,rgba(30,91,255,.35),transparent 70%),
+  radial-gradient(40% 40% at 80% 80%,rgba(123,47,247,.35),transparent 70%),
+  linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.82) 60%,#000)}
+.hero .in{position:relative;z-index:1}
+.hero-logo{width:clamp(150px,20vw,220px);height:auto;margin:0 auto 26px;filter:drop-shadow(0 0 40px rgba(30,91,255,.55))}
+.hero h1{font-size:clamp(64px,12vw,168px);font-style:italic;line-height:.84}
+.hero h1 span{display:block;background:linear-gradient(100deg,#fff 30%,#9DB6FF 60%,#B48CFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:clamp(17px,1.6vw,20px);color:#D6D6DE;max-width:44ch;margin:22px auto 32px}
+.hero .btns{justify-content:center}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:34px}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.04);padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600;color:#D6D6DE}
+
+/* ticker */
+.ticker{background:var(--grad);overflow:hidden;border-block:1px solid rgba(255,255,255,.12)}
+.track{display:flex;width:max-content;animation:tick 38s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.track ul{display:flex;list-style:none;margin:0;padding:0}
+.track li{display:flex;align-items:center;gap:18px;padding:16px 18px;font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:22px;letter-spacing:.6px;white-space:nowrap}
+.track li::after{content:"";width:9px;height:9px;background:var(--yellow);transform:rotate(45deg);margin-left:18px}
+.track b{color:var(--yellow);font-weight:900}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* menu */
+.tabs{display:flex;gap:6px;background:var(--s1);border:1px solid var(--line);border-radius:999px;padding:5px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:none;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px;color:var(--mute);cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--grad);color:#fff}
+.panel[hidden]{display:none}
+.combos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.combo{position:relative;background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s}
+.combo:hover{border-color:rgba(123,47,247,.6)}
+.combo .num{position:absolute;right:14px;top:-6px;font-family:var(--head);font-weight:900;font-style:italic;font-size:96px;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.13)}
+.combo .k{font-family:var(--head);font-weight:800;font-size:16px;color:var(--mute);letter-spacing:1px}
+.combo h3{font-size:30px;margin:4px 0 14px;font-style:italic}
+.combo ul{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.combo li{font-size:13.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--s2);color:#D6D6DE}
+.combo li.pr{background:rgba(122,75,42,.35);color:#F3D2B3}
+.combo .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-family:var(--head);font-weight:900;font-size:40px;color:var(--yellow);line-height:1}
+.combo.hot{background:linear-gradient(160deg,#141433,#0C0C11 60%);border-color:rgba(30,91,255,.5)}
+.flag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--yellow);color:#000;margin-bottom:10px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;color:var(--mute);font-size:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle;background:var(--s2);border:1px solid #444}
+.legend i.p{background:#7A4B2A;border-color:#7A4B2A}
+
+.table{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.trow{display:grid;grid-template-columns:1fr 110px 110px;gap:10px;padding:16px 22px;border-bottom:1px solid var(--line);align-items:center}
+.trow:last-child{border-bottom:0}
+.trow.h{color:var(--mute);font-size:13px;font-weight:700;background:var(--s2);padding-block:12px}
+.trow b{font-weight:600}
+.trow span{text-align:right;font-family:var(--head);font-weight:800;font-size:24px;color:var(--yellow);font-variant-numeric:tabular-nums}
+.trow.h span{font-family:var(--body);font-size:13px;color:var(--mute)}
+
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.group h3{font-size:24px;font-style:italic;margin:0 0 4px}
+.group p{color:var(--mute);margin:0 0 14px;font-size:15px}
+.group+.group{margin-top:26px}
+
+.sweets{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sweet{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.sweet h3{font-size:26px;font-style:italic}
+.sweet .price{font-size:32px;margin-top:10px}
+.fam{margin-top:16px;padding:18px 22px;border-radius:var(--r);background:var(--grad-soft);border:1px solid var(--line);color:#D6D6DE}
+
+/* specials */
+.season{background:linear-gradient(180deg,#000,#07070C)}
+.rail{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.offer{background:var(--s1);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.offer .img{position:relative;aspect-ratio:16/9;overflow:hidden}
+.offer .img img{width:100%;height:100%;object-fit:cover}
+.offer .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,12,17,.95))}
+.offer .in{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.offer h3{font-size:38px;font-style:italic}
+.offer .meta{display:flex;align-items:baseline;gap:12px;margin:10px 0 14px}
+.offer .meta .price{font-size:52px}
+.offer .meta small{color:var(--mute);font-weight:600}
+.offer ul{margin:0 0 16px;padding:0;list-style:none}
+.offer ul li{padding:7px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.offer .add{font-size:14px;color:var(--mute);margin:0 0 20px}
+.offer .btn{margin-top:auto;align-self:flex-start}
+.offer.navy{background:linear-gradient(160deg,#16124A,#0C0C11 70%)}
+.offer.navy .xmas{aspect-ratio:16/9;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,rgba(255,210,26,.25),transparent 50%),radial-gradient(circle at 70% 70%,rgba(123,47,247,.4),transparent 55%),#0B0B1A;font-family:var(--head);font-weight:900;font-style:italic;font-size:clamp(48px,7vw,88px);color:rgba(255,255,255,.9);text-transform:uppercase}
+.minis{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+.mini{border-radius:18px;padding:24px 26px;border:1px solid var(--line);background:var(--s1);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.mini h3{font-size:30px;font-style:italic}
+.mini p{margin:4px 0 0;color:var(--mute);font-size:15px}
+.mini .price{font-size:36px;white-space:nowrap}
+
+/* catering */
+.cater .box{border-radius:24px;padding:56px;background:
+  radial-gradient(70% 90% at 0% 0%,rgba(30,91,255,.28),transparent 60%),
+  radial-gradient(60% 80% at 100% 100%,rgba(123,47,247,.3),transparent 60%),var(--s1);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.svc{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.svc li{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.35);font-weight:600;font-size:15px}
+
+/* forms / builders */
+.builder{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:26px}
+.field{margin-bottom:18px}
+.field>label,.field>.lbl{display:block;font-weight:700;font-size:14px;color:#D6D6DE;margin-bottom:8px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button,.pick button{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#D6D6DE;border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px;cursor:pointer}
+.seg button{min-width:64px;font-family:var(--head);font-size:22px;font-weight:800;padding:8px 14px}
+.seg button[aria-pressed="true"],.pick button[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#fff}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick button{font-size:14px;padding:8px 14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--s2);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;color-scheme:dark}
+textarea{min-height:80px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--purple);outline-offset:1px}
+.hint{font-size:13px;color:var(--mute);margin:12px 0 0}
+.builder .btn{width:100%}
+.cater .box{align-items:start}
+
+/* salon */
+.salon .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+.salon .pic{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative}
+.salon .pic img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.salon .builder{background:var(--s1)}
+
+/* hours */
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.hours div{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.hours small{color:var(--mute);font-weight:600}
+.hours b{display:block;font-family:var(--head);font-weight:800;font-size:30px;font-style:italic;color:var(--yellow);margin-top:4px}
+.fachada{border-radius:20px;overflow:hidden;border:1px solid var(--line);margin-top:14px}
+.fachada img{width:100%;aspect-ratio:16/8;object-fit:cover}
+
+/* visit */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s}
+a.card:hover{border-color:rgba(30,91,255,.6)}
+.card .ic{width:42px;height:42px;border-radius:12px;background:var(--grad);display:grid;place-items:center;margin-bottom:8px}
+.card .ic svg{width:20px;height:20px}
+.card small{color:var(--mute);font-weight:600;font-size:13px}
+.card b{font-size:17px;font-weight:700}
+
+/* teaser */
+.teaser{position:relative;border-radius:24px;overflow:hidden;min-height:360px;display:flex;align-items:flex-end;border:1px solid var(--line);text-decoration:none}
+.teaser img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.teaser::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.35))}
+.teaser .in{position:relative;z-index:1;padding:44px;max-width:560px}
+.teaser .k{color:var(--gold);font-weight:700}
+.teaser h2{margin:6px 0 12px}
+.teaser p{color:#D6D6DE;margin:0 0 22px}
+
+footer{border-top:1px solid var(--line);padding:36px 0 40px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer img{width:44px}
+footer .l{display:flex;align-items:center;gap:14px}
+footer a{color:var(--text)}
+
+/* floating WA (desktop) */
+.wa{position:fixed;right:22px;bottom:22px;z-index:45;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
+.wa svg{width:30px;height:30px;color:#06331A}
+
+/* bottom nav (mobile) */
+.dock{display:none}
+
+/* CLUB */
+.c-hero{position:relative;padding:90px 0 70px;text-align:center;overflow:hidden}
+.c-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(226,184,92,.18),transparent 70%),radial-gradient(50% 50% at 50% 100%,rgba(123,47,247,.25),transparent 70%)}
+.c-hero .in{position:relative}
+.c-hero .k{color:var(--gold);font-weight:700}
+.c-hero h1{font-size:clamp(60px,11vw,150px);font-style:italic;margin:8px 0 18px}
+.c-hero p{color:#D6D6DE;max-width:46ch;margin:0 auto 30px}
+.c-hero .btns{justify-content:center}
+.feature{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+.feature img{width:100%;max-height:560px;object-fit:cover}
+.feature .cap{position:absolute;left:0;bottom:0;padding:32px 36px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);width:100%}
+.feature .cap h3{font-size:clamp(36px,5vw,60px);font-style:italic}
+.feature .cap p{margin:4px 0 0;color:var(--gold);font-weight:600}
+.dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dish{background:var(--s1);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.dish img{aspect-ratio:4/4.4;object-fit:cover;width:100%}
+.dish .in{padding:18px 22px 22px}
+.dish h3{font-size:34px;font-style:italic}
+.dish p{margin:4px 0 0;color:var(--gold);font-weight:600}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.pillars div{border:1px solid var(--line);border-radius:var(--r);padding:22px;font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:26px;text-align:center;background:var(--s1)}
+
+/* add buttons in tables */
+.add-p{font:inherit;font-family:var(--head);font-weight:800;font-size:24px;color:var(--yellow);background:none;border:1px solid transparent;border-radius:10px;padding:2px 8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.add-p::after{content:"+";font-family:var(--body);font-size:15px;font-weight:800;width:20px;height:20px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;line-height:1}
+.add-p:hover{border-color:rgba(255,255,255,.2)}
+.btn.add{background:var(--grad);border-color:rgba(255,255,255,.14)}
+.sweet .btn{margin-top:14px}
+.subh{font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:26px;margin:34px 0 14px}
+.cartbtn{position:fixed;right:96px;bottom:22px;z-index:45;height:60px;padding:0 22px;border-radius:999px;background:var(--grad);border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;gap:10px;font-weight:800;cursor:pointer;box-shadow:0 12px 30px -8px rgba(123,47,247,.7)}
+.cartbtn svg{width:22px;height:22px}
+.badge{min-width:22px;height:22px;border-radius:999px;background:var(--yellow);color:#000;font-size:13px;font-weight:800;display:inline-grid;place-items:center;padding:0 6px}
+.badge[data-n="0"]{display:none}
+.sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:flex-end}
+.sheet[hidden]{display:none}
+.sheet .bd{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px)}
+.sheet .pn{position:relative;width:min(440px,100%);height:100%;background:#0B0B10;border-left:1px solid var(--line);display:flex;flex-direction:column}
+.sheet header{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.sheet header h2{font-size:34px}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--s2);cursor:pointer;font-size:20px;line-height:1}
+.sheet .body{flex:1;overflow:auto;padding:18px 22px}
+.line{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.line b{font-weight:700}
+.line .lp{font-family:var(--head);font-weight:800;font-size:22px;color:var(--yellow);text-align:right}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:var(--s2);cursor:pointer;font-size:18px;font-weight:700;line-height:1}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+.empty{text-align:center;color:var(--mute);padding:40px 10px}
+.empty .btn{margin-top:16px}
+.sheet footer{border-top:1px solid var(--line);padding:16px 22px calc(18px + env(safe-area-inset-bottom));background:#08080C}
+.sheet footer[hidden]{display:none}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.total span{color:var(--mute);font-weight:600}
+.total b{font-family:var(--head);font-weight:900;font-size:36px;color:var(--yellow)}
+.sheet .field{margin-bottom:12px}
+.sheet .field[hidden]{display:none}
+.sheet .btn.grad{width:100%}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:70;background:#fff;color:#000;font-weight:700;padding:12px 18px;border-radius:999px;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.dock .main{position:relative}
+.dock .badge{position:absolute;top:2px;right:calc(50% - 26px);min-width:18px;height:18px;font-size:11px}
+
+
+/* big centered section titles */
+.head-row{flex-direction:column;align-items:center;text-align:center;margin-bottom:44px}
+.head-row .sub{margin-inline:auto}
+.head-row .tabs{margin-top:8px;max-width:100%}
+h2.big{position:relative;display:inline-block;font-size:clamp(68px,12vw,156px);line-height:.86;font-style:italic;font-weight:900;letter-spacing:-1px;padding:0 .08em .04em;
+  background:linear-gradient(100deg,#FFFFFF 8%,#7FA2FF 42%,#8E4DFF 72%,#FFD21A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;isolation:isolate}
+h2.big::before{content:attr(data-t);position:absolute;left:0;top:0;padding:inherit;z-index:-1;color:transparent;-webkit-text-stroke:1.5px rgba(123,47,247,.55);transform:translate(.06em,.06em)}
+h2.big::after{content:"";display:block;width:84px;height:5px;margin:18px auto 0;border-radius:99px;background:var(--grad)}
+body.club h2.big{background:linear-gradient(100deg,#FFFFFF 8%,#E2B85C 45%,#8E4DFF 100%);-webkit-background-clip:text;background-clip:text}
+.boxh{font-size:28px;font-style:italic;margin:0 0 14px}
+.cater .hint{margin-top:18px}
+@media (max-width:760px){h2.big{font-size:clamp(52px,15vw,84px)}.head-row{margin-bottom:30px}h2.big::after{margin-top:12px;width:64px;height:4px}}
+
+/* club carta */
+.cat-banner{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px}
+.cat-banner img{width:100%;aspect-ratio:16/5;max-height:300px;object-fit:cover}
+.cat-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.1) 70%)}
+.cat-banner h3{position:absolute;left:26px;bottom:20px;z-index:1;font-size:clamp(34px,5vw,56px);font-style:italic}
+.cat-banner p{position:absolute;left:26px;bottom:6px;z-index:1;margin:0;color:var(--gold);font-weight:600;font-size:14px;display:none}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:16px}
+.fcard{background:var(--s1);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.fcard img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fcard .in{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.fcard h4{font-family:var(--head);font-weight:900;font-style:italic;text-transform:uppercase;font-size:24px;line-height:.95;margin:0 0 6px;overflow-wrap:anywhere}
+.fcard small{color:var(--mute);font-size:13px}
+.fcard .foot{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.fcard .price{font-size:30px}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:6px 22px}
+.li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.li b{font-weight:600}
+.li small{display:block;color:var(--mute);font-size:13px;font-weight:500}
+.pz .trow{grid-template-columns:1.1fr repeat(4,1fr)}
+.pz .trow span{font-size:20px}
+.pz .trow.h span{font-size:13px}
+.ing{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.ing div{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.ing h4{font-family:var(--head);font-weight:800;font-style:italic;text-transform:uppercase;font-size:22px;margin:0 0 4px}
+.ing p{margin:0 0 10px;color:var(--yellow);font-weight:700;font-size:14px}
+.ing .pick span{font-size:13px;padding:5px 10px;border-radius:999px;background:var(--s2)}
+.note{margin-top:14px;padding:14px 18px;border-radius:14px;background:var(--grad-soft);border:1px solid var(--line);color:#D6D6DE;font-size:15px}
+@media (max-width:760px){
+  .cat-banner img{aspect-ratio:16/8}
+  .feat-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .fcard .in{padding:12px}
+  .fcard h4{font-size:18px}
+  .fcard .price{font-size:24px}
+  .fcard .foot{flex-direction:column;align-items:stretch}
+  .fcard .btn{width:100%}
+  .list{grid-template-columns:1fr;padding:2px 16px}
+  .pz{overflow-x:auto}
+  .pz .trow{grid-template-columns:84px repeat(4,88px);min-width:440px;padding:12px;gap:6px}
+  .pz .trow span{font-size:16px}
+  .pz .trow.h span{font-size:12px}
+  .pz .add-p{gap:4px}
+  .pz .add-p::after{width:16px;height:16px;font-size:12px}
+  .ing{grid-template-columns:1fr 1fr;gap:10px}
+  .ing div{padding:14px}
+}
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.btn,.combo,.card{transition:none}}
+
+/* responsive */
+@media (max-width:960px){
+  .links{display:none}
+  .cards{grid-template-columns:1fr 1fr}
+  .cater .box{grid-template-columns:1fr;padding:36px 26px}
+  .split{grid-template-columns:1fr}
+  .salon .grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px;padding-bottom:84px}
+  section{padding:64px 0}
+  .top .wrap{grid-template-columns:1fr;justify-items:center;min-height:64px}
+  .top .right{display:none}
+  .mark img{width:48px}
+  .mswitch{display:flex;justify-content:center;padding:0 0 10px}
+  .hero{min-height:auto;padding:44px 0 56px}
+  .rail,.minis{grid-template-columns:1fr}
+  .sweets{grid-template-columns:1fr 1fr}
+  .trow{grid-template-columns:1fr 76px 76px;padding:14px 16px}
+  .trow span{font-size:21px}
+  .pillars{grid-template-columns:1fr}
+  .teaser .in{padding:28px}
+  .wa{display:none}
+  .track li{font-size:19px;padding:13px 14px}
+  .dock{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:10px;right:10px;bottom:10px;z-index:50;background:rgba(10,10,14,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom));box-shadow:0 20px 40px -10px rgba(0,0,0,.8)}
+  .dock a,.dock button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px;border-radius:14px;text-decoration:none;font-size:12px;font-weight:700;color:#D6D6DE;background:none;border:0;cursor:pointer}
+  .dock svg{width:22px;height:22px}
+  .dock .main{background:var(--grad);color:#fff}
+  .cartbtn{display:none}
+  .sheet .pn{height:92vh;border-left:0;border-top:1px solid var(--line);border-radius:22px 22px 0 0}
+  .toast{bottom:104px}
+  .sheet .pn{overflow:auto}
+  .sheet .body{flex:none;overflow:visible}
+  .sheet header{position:sticky;top:0;background:#0B0B10;z-index:1}
+  .combos{grid-template-columns:1fr 1fr;gap:10px}
+  .combo{padding:14px}
+  .combo .num{font-size:64px;right:8px;top:-4px}
+  .combo .k{font-size:12px}
+  .combo h3{font-size:19px;margin:2px 0 10px}
+  .combo ul{gap:4px;margin-bottom:12px}
+  .combo li{font-size:11.5px;padding:3px 8px}
+  .combo .foot{flex-direction:column;align-items:stretch;gap:8px}
+  .combo .price{font-size:30px}
+  .combo .btn{width:100%}
+  .flag{font-size:10.5px;padding:3px 8px}
+  .rail,.minis{grid-template-columns:1fr 1fr;gap:10px}
+  .offer .in{padding:14px}
+  .offer h3{font-size:18px}
+  .offer .meta{flex-direction:column;gap:0;margin:6px 0 8px}
+  .offer .meta .price{font-size:32px}
+  .offer .meta small{font-size:12px}
+  .offer ul li{font-size:12.5px;padding:5px 0}
+  .offer .add{display:none}
+  .offer .btn{width:100%}
+  .offer.navy .xmas{font-size:34px}
+  .mini{flex-direction:column;align-items:flex-start;padding:16px;gap:8px}
+  .mini h3{font-size:22px}
+  .mini p{font-size:13px}
+  .mini .price{font-size:26px}
+  .sweet{padding:16px}
+  .sweet h3{font-size:21px}
+  .sweet .price{font-size:26px}
+  .sweet .btn{width:100%}
+  .cards{grid-template-columns:1fr 1fr;gap:10px}
+  .card{padding:16px}
+  .card b{font-size:14.5px}
+  .dishes{grid-template-columns:1fr 1fr;gap:10px}
+  .dish .in{padding:12px 14px 16px}
+  .dish h3{font-size:22px}
+  .dish p{font-size:13px}
+  .row2{grid-template-columns:1fr}
+  .hours{grid-template-columns:1fr 1fr}
+  .hours b{font-size:21px}
+  .add-p{font-size:20px;padding:2px 4px}
+  .builder{padding:20px}
+  .fachada img{aspect-ratio:4/3}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="links" aria-label="Secciones">
+      <button type="button" data-go="menu">Menú</button>
+      <button type="button" data-go="temporada">Especiales</button>
+      <button type="button" data-go="catering">Catering</button>
+      <button type="button" data-go="salon">Salón</button>
+      <button type="button" data-go="visitanos">Visítanos</button>
+    </nav>
+    <a class="mark" href="#parrilla" aria-label="Inicio, La Parrilla Brava"><img src="img/logo.png" alt="Lechonera La Parrilla Brava"></a>
+    <div class="right">
+      <nav class="switch" aria-label="Restaurantes">
+        <a href="#parrilla" data-view="parrilla">Parrilla Brava</a>
+        <a href="#club-brava" data-view="club-brava">Club Brava</a>
+      </nav>
+    </div>
+  </div>
+  <div class="mswitch">
+    <nav class="switch" aria-label="Restaurantes (móvil)">
+      <a href="#parrilla" data-view="parrilla">Parrilla Brava</a>
+      <a href="#club-brava" data-view="club-brava">Club Brava</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ LA PARRILLA BRAVA ============ -->
+<main id="parrilla" class="view">
+
+  <div class="hero">
+    <div class="hero-bg" style="background-image:url('img/bandeja.jpg')" role="img" aria-label="Bandeja de lechón asado con morcilla, mofongo, maduros, yuca y arroz"></div>
+    <div class="in wrap">
+      <img class="hero-logo" src="img/logo.png" alt="Lechonera La Parrilla Brava, since 2016" width="581" height="600">
+      <h1>Los duros<span>de la 31</span></h1>
+      <p class="lede">Lechón asado del país en Barrio Peña Pobre, Naguabo. Tradición, cultura y sabor puertorriqueño desde 2016.</p>
+      <div class="btns">
+        <a class="btn grad" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20La%20Parrilla%20Brava"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Pide por WhatsApp</a>
+        <button class="btn ghost" type="button" data-go="menu">Ver el menú</button>
+      </div>
+      <div class="chips"><span class="chip">Salón comedor</span><span class="chip">Carry out</span><span class="chip">Delivery</span><span class="chip">ATH Móvil</span></div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-label="Especiales">
+    <div class="track">
+      <ul>
+        <li>Lechón asado del país <b>$13 lb</b></li>
+        <li>Thanksgiving Dinner para 12 <b>$130</b></li>
+        <li>Cena Navideña <b>$130</b></li>
+        <li>Asamos pavos y perniles <b>$1.25 lb</b></li>
+        <li>Cuajito de temporada</li>
+        <li>Almuerzos desde <b>$12</b></li>
+        <li>Catering de 10 a 50 personas</li>
+        <li>Alquila nuestro salón de eventos</li>
+        <li>Delivery y carry out</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>Lechón asado del país <b>$13 lb</b></li>
+        <li>Thanksgiving Dinner para 12 <b>$130</b></li>
+        <li>Cena Navideña <b>$130</b></li>
+        <li>Asamos pavos y perniles <b>$1.25 lb</b></li>
+        <li>Cuajito de temporada</li>
+        <li>Almuerzos desde <b>$12</b></li>
+        <li>Catering de 10 a 50 personas</li>
+        <li>Alquila nuestro salón de eventos</li>
+        <li>Delivery y carry out</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <h2 class="big" data-t="Menú">Menú</h2>
+          <p class="sub">Todos los almuerzos llevan arroz y lechón asado. Toca Agregar y envía tu orden desde el botón Ordenar.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Secciones del menú">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="p-alm" id="t-alm">Almuerzos</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-lb" id="t-lb" tabindex="-1">Por libra</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-comp" id="t-comp" tabindex="-1">Complementos</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-post" id="t-post" tabindex="-1">Postres</button>
+        </div>
+      </div>
+
+      <div class="panel" id="p-alm" role="tabpanel" aria-labelledby="t-alm">
+        <div class="combos" id="combos"></div>
+        <div class="legend"><span><i></i>Complemento regular</span><span><i class="p"></i>Premium: batata, morcilla o pastel</span></div>
+      </div>
+
+      <div class="panel" id="p-lb" role="tabpanel" aria-labelledby="t-lb" hidden>
+        <div class="table">
+          <div class="trow h"><b>Producto</b><span>½ libra</span><span>1 libra</span></div>
+          <div class="trow"><b>Lechón asado del país</b><span><button class="add-p" data-add="Lechón asado del país (½ lb)" data-price="7" aria-label="Agregar Lechón asado del país media libra, $7">$7</button></span><span><button class="add-p" data-add="Lechón asado del país (1 lb)" data-price="13" aria-label="Agregar Lechón asado del país una libra, $13">$13</button></span></div>
+          <div class="trow"><b>Morcillas</b><span><button class="add-p" data-add="Morcillas (½ lb)" data-price="7" aria-label="Agregar Morcillas media libra, $7">$7</button></span><span><button class="add-p" data-add="Morcillas (1 lb)" data-price="13" aria-label="Agregar Morcillas una libra, $13">$13</button></span></div>
+          <div class="trow"><b>Arroz con gandules</b><span><button class="add-p" data-add="Arroz con gandules (½ lb)" data-price="3" aria-label="Agregar Arroz con gandules media libra, $3">$3</button></span><span><button class="add-p" data-add="Arroz con gandules (1 lb)" data-price="6" aria-label="Agregar Arroz con gandules una libra, $6">$6</button></span></div>
+          <div class="trow"><b>Batata</b><span><button class="add-p" data-add="Batata (½ lb)" data-price="5" aria-label="Agregar Batata media libra, $5">$5</button></span><span><button class="add-p" data-add="Batata (1 lb)" data-price="10" aria-label="Agregar Batata una libra, $10">$10</button></span></div>
+          <div class="trow"><b>Escabeches</b><span><button class="add-p" data-add="Escabeches (½ lb)" data-price="3.5" aria-label="Agregar Escabeches media libra, $3.50">$3.50</button></span><span><button class="add-p" data-add="Escabeches (1 lb)" data-price="7" aria-label="Agregar Escabeches una libra, $7">$7</button></span></div>
+          <div class="trow"><b>Verduras hervidas</b><span><button class="add-p" data-add="Verduras hervidas (½ lb)" data-price="3.5" aria-label="Agregar Verduras hervidas media libra, $3.50">$3.50</button></span><span><button class="add-p" data-add="Verduras hervidas (1 lb)" data-price="7" aria-label="Agregar Verduras hervidas una libra, $7">$7</button></span></div>
+          <div class="trow h"><b>Por pieza</b><span></span><span></span></div>
+          <div class="trow"><b>Pasteles</b><span><button class="add-p" data-add="Pastel (1)" data-price="3">$3 c/u</button></span><span><button class="add-p" data-add="Pasteles (yunta)" data-price="6">$6 yunta</button></span></div>
+          <div class="trow"><b>Guineos hervidos</b><span></span><span><button class="add-p" data-add="Guineos hervidos (3)" data-price="2">3 por $2</button></span></div>
+          <div class="trow"><b>Maduros</b><span></span><span><button class="add-p" data-add="Maduro" data-price="3">$3 c/u</button></span></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-comp" role="tabpanel" aria-labelledby="t-comp" hidden>
+        <div class="split">
+          <div>
+            <div class="group">
+              <h3>Regulares</h3>
+              <p>Elige tu favorito para los almuerzos #2, #4, #5 y #7. Toca un precio para añadirlo a tu orden.</p>
+              <div class="table">
+                <div class="trow"><b>Escabeches</b><span></span><span><button class="add-p" data-add="Escabeches (1 lb)" data-price="7">$7 lb</button></span></div>
+                <div class="trow"><b>Verduras hervidas</b><span></span><span><button class="add-p" data-add="Verduras hervidas (1 lb)" data-price="7">$7 lb</button></span></div>
+                <div class="trow"><b>Guineos hervidos</b><span></span><span><button class="add-p" data-add="Guineos hervidos (3)" data-price="2">3 por $2</button></span></div>
+                <div class="trow"><b>Maduros</b><span></span><span><button class="add-p" data-add="Maduro" data-price="3">$3</button></span></div>
+                <div class="trow"><b>Ensalada fría de coditos o papa</b><span><button class="add-p" data-add="Ensalada fría (3 oz)" data-price="2.5">3 oz $2.50</button></span><span><button class="add-p" data-add="Ensalada fría (8 oz)" data-price="5">8 oz $5</button></span></div>
+                <div class="trow"><b></b><span></span><span><button class="add-p" data-add="Ensalada fría (16 oz)" data-price="10">16 oz $10</button></span></div>
+              </div>
+            </div>
+            <div class="group">
+              <h3>Premium</h3>
+              <p>Los favoritos de nuestros clientes: batata, morcilla y pastel.</p>
+            </div>
+          </div>
+          <div class="photo"><img src="img/complementos.jpg" alt="Maduros, escabeche, guineos y verduras en la vitrina"></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-post" role="tabpanel" aria-labelledby="t-post" hidden>
+        <div class="sweets"><div class="sweet"><h3>Tembleque</h3><div class="price">$2.50</div><button class="btn add sm" type="button" data-add="Tembleque" data-price="2.50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div><div class="sweet"><h3>Majarete</h3><div class="price">$2.50</div><button class="btn add sm" type="button" data-add="Majarete" data-price="2.50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div><div class="sweet"><h3>Arroz con dulce</h3><div class="price">$2.50</div><button class="btn add sm" type="button" data-add="Arroz con dulce" data-price="2.50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div><div class="sweet"><h3>Flan de queso</h3><div class="price">$2.50</div><button class="btn add sm" type="button" data-add="Flan de queso" data-price="2.50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div></div>
+        <h3 class="subh">Familiares, con coco natural</h3>
+        <div class="sweets"><div class="sweet"><h3>Tembleque familiar</h3><div class="price">$10</div><button class="btn add sm" type="button" data-add="Tembleque familiar" data-price="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div><div class="sweet"><h3>Arroz con dulce familiar</h3><div class="price">$10</div><button class="btn add sm" type="button" data-add="Arroz con dulce familiar" data-price="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div><div class="sweet"><h3>Flan familiar</h3><div class="price" style="font-size:18px;color:var(--mute)">Pregunta el precio</div><a class="btn ghost sm" style="margin-top:14px;width:100%" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20un%20flan%20familiar">Preguntar</a></div><div class="sweet"><h3>Majarete familiar</h3><div class="price" style="font-size:18px;color:var(--mute)">Pregunta el precio</div><a class="btn ghost sm" style="margin-top:14px;width:100%" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20un%20majarete%20familiar">Preguntar</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="season" id="temporada">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <h2 class="big" data-t="Temporada">Temporada</h2>
+          <p class="sub">Encarga con tiempo y llega a la mesa sin cocinar.</p>
+        </div>
+      </div>
+      <div class="rail">
+        <article class="offer">
+          <div class="img"><img src="img/pavo.jpg" alt="Pavo asado para Thanksgiving"></div>
+          <div class="in">
+            <h3>Thanksgiving Dinner</h3>
+            <div class="meta"><span class="price">$130</span><small>12 personas</small></div>
+            <ul>
+              <li>Lechón asado o pavo asado</li>
+              <li>Arroz + 1 complemento: arroz con gandules, ensalada de coditos o guineos en escabeche</li>
+              <li>Botellón de refresco incluido</li>
+            </ul>
+            <p class="add">Añade pasteles a $6 la yunta y morcilla a $10 la libra. Flan, tembleque y arroz con dulce disponibles.</p>
+            <button class="btn add sm" type="button" data-add="Thanksgiving Dinner (12 personas)" data-price="130"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button>
+          </div>
+        </article>
+        <article class="offer navy">
+          <div class="xmas" aria-hidden="true">Navidad</div>
+          <div class="in">
+            <h3>Cena Navideña</h3>
+            <div class="meta"><span class="price">$130</span><small>10 a 12 personas</small></div>
+            <ul>
+              <li>Lechón asado y arroz con gandules</li>
+              <li>Escoge: ensalada de coditos, guineos en escabeche o yuca en escabeche</li>
+              <li>Botellón de refresco</li>
+            </ul>
+            <p class="add">Añade pasteles ($5 yunta), morcillas ($10 lb), tembleque familiar ($10) o arroz con dulce familiar ($10).</p>
+            <button class="btn add sm" type="button" data-add="Cena Navideña (10 a 12 personas)" data-price="130"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button>
+          </div>
+        </article>
+      </div>
+      <div class="minis">
+        <div class="mini"><div><h3>No cocines</h3><p>Asamos tus pavos y perniles.</p></div><span class="price">$1.25 lb</span></div>
+        <div class="mini"><div><h3>Cuajito</h3><p>De temporada. Envases de ½ lb, 1 lb y 2 lbs.</p></div><a class="btn ghost sm" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20pedir%20cuajito">Pídelo</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cater" id="catering">
+    <div class="wrap">
+      <div class="head-row"><div><h2 class="big" data-t="Catering">Catering</h2><p class="sub">Bodas, cumpleaños, empresas o la fiesta en casa. Escoge cuántas personas y qué quieres servir, y te enviamos la cotización por WhatsApp.</p></div></div>
+      <div class="box">
+        <div>
+          <h3 class="boxh">Lo que hacemos</h3>
+          <ul class="svc">
+            <li>Paellas</li><li>Parrilladas</li><li>Lechonera</li><li>Estación de pastas</li><li>Estación mexicana</li><li>Actividades privadas</li><li>Chef privado y mozos</li><li>Barra</li><li>Cocktails</li>
+          </ul>
+          <p class="hint">¿Más de 50 personas? Escríbenos igual y lo cuadramos.</p>
+        </div>
+        <form class="builder" id="f-cater" onsubmit="return false" aria-label="Pedir cotización de catering">
+          <div class="field"><span class="lbl" id="l-pax">¿Cuántas personas?</span>
+            <div class="seg" role="group" aria-labelledby="l-pax" data-name="pax" data-single>
+              <button type="button" aria-pressed="false">10</button><button type="button" aria-pressed="true">20</button><button type="button" aria-pressed="false">30</button><button type="button" aria-pressed="false">40</button><button type="button" aria-pressed="false">50</button>
+            </div>
+          </div>
+          <div class="field"><span class="lbl" id="l-menu">¿Qué quieres servir?</span>
+            <div class="pick" role="group" aria-labelledby="l-menu" data-name="menu">
+              <button type="button" aria-pressed="true">Lechón asado</button><button type="button" aria-pressed="false">Parrillada</button><button type="button" aria-pressed="false">Paella</button><button type="button" aria-pressed="false">Estación de pastas</button><button type="button" aria-pressed="false">Estación mexicana</button>
+            </div>
+          </div>
+          <div class="field"><span class="lbl" id="l-ext">Servicios adicionales</span>
+            <div class="pick" role="group" aria-labelledby="l-ext" data-name="extras">
+              <button type="button" aria-pressed="false">Chef privado y mozos</button><button type="button" aria-pressed="false">Barra y cocktails</button><button type="button" aria-pressed="false">Postres</button>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="c-fecha">Fecha</label><input id="c-fecha" type="date"></div>
+            <div class="field"><label for="c-pueblo">Pueblo del evento</label><input id="c-pueblo" type="text" placeholder="Ej. Naguabo"></div>
+          </div>
+          <div class="field"><label for="c-nombre">Tu nombre</label><input id="c-nombre" type="text" autocomplete="name"></div>
+          <a class="btn grad" id="c-send" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Pedir cotización por WhatsApp</a>
+          <p class="hint">Se abre WhatsApp con tu pedido escrito. Te respondemos con el precio y la disponibilidad.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="salon" id="salon">
+    <div class="wrap">
+      <div class="head-row"><div><h2 class="big" data-t="Salón de eventos">Salón de eventos</h2><p class="sub">Alquila nuestro espacio en Peña Pobre para cumpleaños, baby showers, reuniones de empresa y actividades privadas. Con barra, aire acondicionado y la comida de la casa.</p></div></div>
+      <div class="grid">
+        <div>
+          <div class="pic"><img src="img/salon.jpg" alt="Interior del salón: mesas, barra y área con aire acondicionado"></div>
+          <div class="feats"><span class="chip">Barra</span><span class="chip">Aire acondicionado</span><span class="chip">TV</span><span class="chip">DJ disponible</span><span class="chip">Catering de la casa</span></div>
+        </div>
+        <form class="builder" id="f-salon" onsubmit="return false" aria-label="Reservar el salón">
+          <div class="field"><span class="lbl" id="l-tipo">Tipo de actividad</span>
+            <div class="pick" role="group" aria-labelledby="l-tipo" data-name="tipo" data-single>
+              <button type="button" aria-pressed="true">Cumpleaños</button><button type="button" aria-pressed="false">Baby shower</button><button type="button" aria-pressed="false">Empresa</button><button type="button" aria-pressed="false">Graduación</button><button type="button" aria-pressed="false">Otra</button>
+            </div>
+          </div>
+          <div class="field"><span class="lbl" id="l-spax">Invitados</span>
+            <div class="seg" role="group" aria-labelledby="l-spax" data-name="spax" data-single>
+              <button type="button" aria-pressed="false">10</button><button type="button" aria-pressed="true">20</button><button type="button" aria-pressed="false">30</button><button type="button" aria-pressed="false">40</button><button type="button" aria-pressed="false">50</button>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="s-fecha">Fecha</label><input id="s-fecha" type="date"></div>
+            <div class="field"><label for="s-hora">Hora</label><input id="s-hora" type="time"></div>
+          </div>
+          <div class="field"><label for="s-comida">¿Incluir comida?</label>
+            <select id="s-comida"><option>Sí, con catering de la casa</option><option>Solo el salón</option><option>No sé todavía</option></select>
+          </div>
+          <div class="field"><label for="s-nombre">Tu nombre</label><input id="s-nombre" type="text" autocomplete="name"></div>
+          <a class="btn grad" id="s-send" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Consultar disponibilidad</a>
+          <p class="hint">Te confirmamos fecha y precio por WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="visitanos">
+    <div class="wrap">
+      <div class="head-row"><h2 class="big" data-t="Visítanos">Visítanos</h2></div>
+      <div class="cards">
+        <a class="card" href="https://www.google.com/maps/search/?api=1&query=Lechonera+La+Parrilla+Brava+Carr+31+Pe%C3%B1a+Pobre+Naguabo+PR"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-pin"/></svg></span><small>Dirección</small><b>Carr. 31, Barrio Peña Pobre, Naguabo</b></a>
+        <a class="card" href="tel:+17876903922"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-phone"/></svg></span><small>Teléfono</small><b>787-690-3922</b></a>
+        <a class="card" href="https://wa.me/19392312872"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg></span><small>WhatsApp</small><b>939-231-2872</b></a>
+        <a class="card" href="https://www.facebook.com/share/1FL88EBeAF/"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-fb"/></svg></span><small>Facebook</small><b>La Parrilla Brava</b></a>
+      </div>
+      <p class="sub">Salón comedor, carry out y delivery. Aceptamos ATH Móvil.</p>
+      <div class="fachada"><img src="img/fachada.jpg" alt="Fachada azul de La Parrilla Brava y Club Brava en la Carr. 31"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <a class="teaser" href="#club-brava">
+        <img src="img/pizza.jpg" alt="">
+        <div class="in">
+          <span class="k">También en Peña Pobre</span>
+          <h2>Club Brava</h2>
+          <p>Cocina puertorriqueña del Chef Lando Aponte: Brava Cheese Pizza, Kan Kan, Mar y Tierra y más.</p>
+          <span class="btn grad">Conoce Club Brava</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- ============ CLUB BRAVA ============ -->
+<main id="club-brava" class="view" hidden>
+  <div class="c-hero">
+    <div class="in wrap">
+      <span class="k">Restaurant, lounge y bar. Cocina del Chef Lando Aponte</span>
+      <h1>Puerto Rican Cuisine</h1>
+      <p>Drink, eat, DJ, repeat. Los sabores de la isla con presentación de chef, happy hour y DJ, en Peña Pobre, Naguabo.</p>
+      <div class="btns">
+        <a class="btn grad" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20reservar%20en%20Club%20Brava"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Reservar por WhatsApp</a>
+        <button class="btn ghost" type="button" data-go="c-carta">Ver el menú</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="feature" style="margin:0">
+      <img src="img/pizza.jpg" alt="Brava Cheese Pizza con queso derretido y pepperoni">
+      <figcaption class="cap"><h3>Brava Cheese Pizza</h3><p>La pizza de la casa</p></figcaption>
+    </figure>
+  </div>
+
+  <section id="c-carta">
+    <div class="wrap">
+      <div class="head-row"><div><h2 class="big" data-t="Menú">Menú</h2><p class="sub">Aperitivos, mofongos, platos principales, pastas y pizzas. Toca un precio o Agregar y envía tu orden desde el botón Ordenar.</p></div>
+        <div class="tabs" role="tablist" aria-label="Menú de Club Brava" id="ctabs"></div>
+      </div>
+      <div id="cpanels"></div>
+    </div>
+  </section>
+
+  <section id="c-menu">
+    <div class="wrap">
+      <div class="head-row"><h2 class="big" data-t="Favoritos">Favoritos</h2></div>
+      <div class="dishes">
+        <article class="dish"><img src="img/kankan.jpg" alt="Kan Kan con mofongo y ensalada"><div class="in"><h3>Kan Kan</h3><p>Clásico puertorriqueño</p></div></article>
+        <article class="dish"><img src="img/marytierra.jpg" alt="Mar y Tierra: filete y camarones sobre mofongo"><div class="in"><h3>Mar y Tierra</h3><p>Surf &amp; turf</p></div></article>
+        <article class="dish"><img src="img/alfredo.jpg" alt="Chicken Alfredo con pollo a la parrilla"><div class="in"><h3>Chicken Alfredo</h3><p>Pasta</p></div></article>
+      </div>
+      <div class="pillars"><div>Restaurant</div><div>Lounge y happy hour</div><div>Bar y DJ</div></div>
+    </div>
+  </section>
+
+  <section id="c-visit" style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row"><h2 class="big" data-t="Te esperamos">Te esperamos</h2></div>
+      <div class="hours" style="margin:0 0 14px"><div><small>Domingo a jueves</small><b>11:00 AM a 9:00 PM</b></div><div><small>Viernes y sábado</small><b>11:00 AM a 12:00 AM</b></div></div>
+      <div class="cards">
+        <a class="card" href="https://www.google.com/maps/search/?api=1&query=Carr+31+Pe%C3%B1a+Pobre+Naguabo+PR"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-pin"/></svg></span><small>Dirección</small><b>Carr. 31, Peña Pobre, Naguabo</b></a>
+        <a class="card" href="tel:+17876903922"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-phone"/></svg></span><small>Teléfono</small><b>787-690-3922</b></a>
+        <a class="card" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20reservar%20en%20Club%20Brava"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg></span><small>Reservas</small><b>939-231-2872</b></a>
+        <a class="card" href="#parrilla"><span class="ic"><img src="img/logo.png" alt="" style="width:30px"></span><small>Al lado</small><b>La Parrilla Brava</b></a>
+      </div>
+      <div class="fachada"><img src="img/fachada.jpg" alt="Entrada de Club Brava con el horario en la puerta"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="l"><img src="img/logo.png" alt=""><span>Lechonera La Parrilla Brava y Club Brava Restaurant<br>Carr. 31, Barrio Peña Pobre, Naguabo, PR</span></div>
+    <span><a href="tel:+17876903922">787-690-3922</a> &nbsp; <a href="https://wa.me/19392312872">WhatsApp</a> &nbsp; <a href="https://www.facebook.com/share/1FL88EBeAF/">Facebook</a></span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/19392312872?text=Hola%2C%20quiero%20hacer%20un%20pedido" aria-label="Escríbenos por WhatsApp al 939-231-2872"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<nav class="dock" aria-label="Acciones rápidas">
+  <button type="button" data-go="menu" data-go-club="c-carta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-menu"/></svg>Menú</button>
+  <button type="button" class="main" data-cart><span class="badge" data-n="0">0</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-bag"/></svg>Ordenar</button>
+  <a href="https://wa.me/19392312872?text=Hola%2C%20quiero%20hacer%20un%20pedido"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="tel:+17876903922"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-phone"/></svg>Llamar</a>
+</nav>
+
+<button class="cartbtn" type="button" data-cart aria-label="Ver tu orden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#i-bag"/></svg>Ordenar <span class="badge" data-n="0">0</span></button>
+
+<div class="sheet" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-t" hidden>
+  <div class="bd" data-close></div>
+  <div class="pn">
+    <header><h2 id="cart-t">Tu orden</h2><button class="x" type="button" data-close aria-label="Cerrar">×</button></header>
+    <div class="body" id="cart-body"></div>
+    <footer id="cart-foot">
+      <div class="total"><span>Total estimado</span><b id="cart-total">$0</b></div>
+      <div class="field"><div class="seg" role="group" aria-label="Entrega" data-name="entrega" data-single style="display:grid;grid-template-columns:1fr 1fr">
+        <button type="button" aria-pressed="true" style="font-family:var(--body);font-size:15px">Recoger</button><button type="button" aria-pressed="false" style="font-family:var(--body);font-size:15px">Delivery</button>
+      </div></div>
+      <div class="field" id="addr-f" hidden><label for="o-dir">Dirección para delivery</label><input id="o-dir" type="text" autocomplete="street-address" placeholder="Calle, barrio, pueblo"></div>
+      <div class="row2">
+        <div class="field"><label for="o-nombre">Nombre</label><input id="o-nombre" type="text" autocomplete="name"></div>
+        <div class="field"><label for="o-nota">Nota</label><input id="o-nota" type="text" placeholder="Ej. sin cebolla"></div>
+      </div>
+      <a class="btn grad" id="o-send" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Enviar orden por WhatsApp</a>
+      <p class="hint" style="text-align:center">Te confirmamos el total y el tiempo por WhatsApp. Aceptamos ATH Móvil.</p>
+    </footer>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V14h2.7v8h3.4z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 7 7l1.4-2.3L21 15.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol>
+</svg>
+
+<script>
+(function(){
+  /* combos */
+  var combos=[
+    {t:'El básico',items:['Arroz','Lechón asado'],p:12},
+    {t:'El regular',items:['Arroz','Lechón','1 regular'],p:13},
+    {t:'El premium',items:['Arroz','Lechón','1 premium*'],p:14},
+    {t:'Con morcilla',items:['Arroz','Lechón','1 regular','Morcilla*'],p:16},
+    {t:'Con pastel',items:['Arroz','Lechón','1 regular','Pastel*'],p:16},
+    {t:'Morcilla y pastel',items:['Arroz','Lechón','Morcilla*','Pastel*'],p:18},
+    {t:'El completo',items:['Arroz','Lechón','1 regular','Morcilla*','Pastel*'],p:20,hot:true}
+  ];
+  var box=document.getElementById('combos'), html='';
+  combos.forEach(function(c,i){
+    var n=i+1, desc=c.items.map(function(x){return x.replace('*','');}).join(', ');
+    html+='<article class="combo'+(c.hot?' hot':'')+'"><span class="num" aria-hidden="true">'+n+'</span>'+
+      (c.hot?'<span class="flag">El más completo</span>':'')+
+      '<span class="k">Almuerzo #'+n+'</span><h3>'+c.t+'</h3><ul>'+
+      c.items.map(function(x){var pr=x.indexOf('*')>-1;return '<li'+(pr?' class="pr"':'')+'>'+x.replace('*','')+'</li>';}).join('')+
+      '</ul><div class="foot"><span class="price">$'+c.p+'</span><button class="btn add sm" type="button" data-add="Almuerzo #'+n+' ('+desc+')" data-price="'+c.p+'" aria-label="Agregar almuerzo '+n+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar</button></div></article>';
+  });
+  box.innerHTML=html;
+
+
+  /* club carta */
+  var CB=' (Club Brava)';
+  var carta=[
+    {id:'ap',t:'Aperitivos',img:'c-aperitivos',items:[['Alitas',8.95],['Mozzarella',7.95],['Sorullitos',7.95],['Croquetas de jamón',7.95],['Morcillas',10],['Mini frituras surtidas',6.95],['Palitos de queso',8]]},
+    {id:'es',t:'Especialidades',img:'c-mofcam',items:[['Brava Burger',13.95,'c-burger'],['Mofongo relleno de camarones',20.25,'c-mofcam'],['Quesadillas',10.95],['Mofongo relleno de pollo',12.95],['Mofongo relleno de churrasco',18.95]]},
+    {id:'pp',t:'Platos principales',img:'c-camarones',items:[['Mar y Tierra',27.95,'marytierra'],['Camarones',20.95,'c-camarones'],['Pechuga a la parrilla',14.95,'c-pechuga','Salsas: Alfredo, guayaba o al ajillo'],['Pechuga rellena',20],['Carne frita',13.95],['Chicharrones de pollo',12.95],['Chuleta a la parrilla',11.95],['Churrasco',27.95],['Alitas',10.95]]},
+    {id:'ac',t:'Acompañantes',img:'c-acomp',chips:['Mofongo','Tostones','Papas fritas','Bolitas de mofongo','Batatas fritas','Maduros','Onion rings','Arroz con gandules'],note:'Elige tus acompañantes favoritos y pregunta por nuestras combinaciones.'},
+    {id:'pa',t:'Pastas',img:'c-pasta',items:[['Pasta Alfredo con pollo',11.95,'c-pasta'],['Pasta Alfredo con churrasco',16.95],['Pasta Alfredo con camarones',17.95],['Lasaña salsa roja',11.95]]},
+    {id:'pz',t:'Pizzas',img:'c-pizza',pizza:true},
+    {id:'po',t:'Postres',img:'c-cheesecake',items:[['Cheesecake al plato',7.95,'c-cheesecake'],['Flan de queso',3],['Tembleque',3],['Arroz con dulce',3]]},
+    {id:'be',t:'Bebidas',img:'c-bebidas',items:[['Piña colada',7],['Frappé de fresa',7],['Frappé de frutas',7],['Cervezas',4],['Refrescos',2],['Agua',2],['Tragos',null,null,'Desde $7 hasta $10']]}
+  ];
+  var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+  function m2(n){return '$'+(n%1?n.toFixed(2):n);}
+  function esc(t){return t.replace(/"/g,'&quot;');}
+  var th='',ph='';
+  carta.forEach(function(c,i){
+    th+='<button class="tab" role="tab" id="ct-'+c.id+'" aria-controls="cp-'+c.id+'" aria-selected="'+(i===0)+'"'+(i?' tabindex="-1"':'')+'>'+c.t+'</button>';
+    var hasF=c.items&&c.items.some(function(x){return x[2];});
+    var h=hasF?'':'<div class="cat-banner"><img src="img/'+c.img+'.jpg" alt="" loading="lazy"><h3>'+c.t+'</h3></div>';
+    if(c.items){
+      var f=c.items.filter(function(x){return x[2];}), r=c.items.filter(function(x){return !x[2];});
+      if(f.length){h+='<div class="feat-grid">'+f.map(function(x){return '<article class="fcard"><img src="img/'+x[2]+'.jpg" alt="'+esc(x[0])+'" loading="lazy"><div class="in"><h4>'+x[0]+'</h4>'+(x[3]?'<small>'+x[3]+'</small>':'')+'<div class="foot"><span class="price">'+m2(x[1])+'</span><button class="btn add sm" type="button" data-add="'+esc(x[0]+CB)+'" data-price="'+x[1]+'">'+PLUS+'Agregar</button></div></div></article>';}).join('')+'</div>';}
+      if(r.length){h+='<div class="list">'+r.map(function(x){return '<div class="li"><b>'+x[0]+(x[3]?'<small>'+x[3]+'</small>':'')+'</b>'+(x[1]!=null?'<button class="add-p" data-add="'+esc(x[0]+CB)+'" data-price="'+x[1]+'" aria-label="Agregar '+esc(x[0])+', '+m2(x[1])+'">'+m2(x[1])+'</button>':'')+'</div>';}).join('')+'</div>';}
+    }
+    if(c.chips){h+='<div class="list" style="display:block;padding:20px 22px"><div class="pick">'+c.chips.map(function(x){return '<span class="chip">'+x+'</span>';}).join('')+'</div></div><div class="note">'+c.note+'</div>';}
+    if(c.pizza){
+      var sizes=['Personal','Mediana','Grande','Sportman'], P={Queso:[10,15,20,25],Suprema:[15,21.99,27.99,32.99],Carnes:[14.95,21.99,27.99,27.99],Vegetales:[13.99,19.99,25.99,29.99]};
+      h+='<div class="table pz"><div class="trow h"><b>Pizza</b>'+sizes.map(function(z){return '<span>'+z+'</span>';}).join('')+'</div>'+
+        Object.keys(P).map(function(k){return '<div class="trow"><b>'+k+'</b>'+P[k].map(function(v,j){return '<span><button class="add-p" data-add="Pizza '+sizes[j]+' '+k+CB+'" data-price="'+v+'" aria-label="Agregar pizza '+sizes[j]+' '+k+', '+m2(v)+'">'+m2(v)+'</button></span>';}).join('')+'</div>';}).join('')+'</div>';
+      h+='<div class="list" style="margin-top:16px">'+[['Calzone supremo',15],['Calzone de carnes',15],['Calzone de vegetales',13.99],['Palitos',8]].map(function(x){return '<div class="li"><b>'+x[0]+'</b><button class="add-p" data-add="'+x[0]+CB+'" data-price="'+x[1]+'">'+m2(x[1])+'</button></div>';}).join('')+'</div>';
+      h+='<div class="ing"><div><h4>Ingredientes regulares</h4><p>P $1.50 · M $2 · G $3 · S $3</p><div class="pick">'+['Doble queso','Pepperoni','Salchicha italiana','Chorizo','Cebolla','Pimiento','Setas','Tomate','Piña','Maduro'].map(function(x){return '<span>'+x+'</span>';}).join('')+'</div></div><div><h4>Ingredientes premium</h4><p>P $2.50 · M $3.50 · G $3 · S $5</p><div class="pick">'+['Pollo','Bacon','Camarones','Vegetales mixtos','Mofongo','Pernil'].map(function(x){return '<span>'+x+'</span>';}).join('')+'</div></div></div><div class="note">P personal, M mediana, G grande, S sportman. Escribe los ingredientes extra en la nota de tu orden.</div>';
+    }
+    ph+='<div class="panel" role="tabpanel" id="cp-'+c.id+'" aria-labelledby="ct-'+c.id+'"'+(i?' hidden':'')+'>'+h+'</div>';
+  });
+  document.getElementById('ctabs').innerHTML=th; document.getElementById('cpanels').innerHTML=ph;
+  var ctabs=[].slice.call(document.querySelectorAll('#ctabs .tab'));
+  function csel(t){ctabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+  ctabs.forEach(function(t,i){t.addEventListener('click',function(){csel(t);});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=ctabs[(i+d+ctabs.length)%ctabs.length];csel(n);n.focus();e.preventDefault();}});});
+
+  /* tabs */
+  var tabs=[].slice.call(document.querySelectorAll('#menu .tab'));
+  function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t);});
+    t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault();}});
+  });
+
+
+  /* toggles */
+  document.querySelectorAll('.seg,.pick').forEach(function(g){
+    g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+      if(g.hasAttribute('data-single')){g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});}
+      else{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');}
+      update(); if(window.__ol) window.__ol();});
+  });
+  function vals(form,name){return [].map.call(document.querySelectorAll('#'+form+' [data-name="'+name+'"] [aria-pressed="true"]'),function(b){return b.textContent;});}
+  function v(id){return (document.getElementById(id).value||'').trim();}
+  function fdate(d){if(!d)return 'por definir';var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0];}
+  function update(){
+    var m='Hola, quiero cotizar un catering con La Parrilla Brava.\n'+
+      '- Personas: '+(vals('f-cater','pax')[0]||'')+'\n'+
+      '- Menú: '+(vals('f-cater','menu').join(', ')||'por definir')+'\n'+
+      (vals('f-cater','extras').length?'- Adicionales: '+vals('f-cater','extras').join(', ')+'\n':'')+
+      '- Fecha: '+fdate(v('c-fecha'))+'\n'+
+      '- Pueblo: '+(v('c-pueblo')||'por definir')+
+      (v('c-nombre')?'\n- Nombre: '+v('c-nombre'):'');
+    document.getElementById('c-send').href='https://wa.me/19392312872?text='+encodeURIComponent(m);
+    var h=v('s-hora'), m2='Hola, quiero alquilar el salón de eventos.\n'+
+      '- Actividad: '+(vals('f-salon','tipo')[0]||'')+'\n'+
+      '- Invitados: '+(vals('f-salon','spax')[0]||'')+'\n'+
+      '- Fecha: '+fdate(v('s-fecha'))+(h?' a las '+h:'')+'\n'+
+      '- Comida: '+v('s-comida')+
+      (v('s-nombre')?'\n- Nombre: '+v('s-nombre'):'');
+    document.getElementById('s-send').href='https://wa.me/19392312872?text='+encodeURIComponent(m2);
+  }
+  document.querySelectorAll('#f-cater input,#f-salon input,#f-salon select').forEach(function(i){i.addEventListener('input',update);i.addEventListener('change',update);});
+  update();
+
+
+  /* cart */
+  var cart=[], toastT;
+  try{cart=JSON.parse(localStorage.getItem('pb-cart')||'[]')||[];}catch(e){cart=[];}
+  function money(n){return '$'+(n%1?n.toFixed(2):String(n));}
+  function save(){try{localStorage.setItem('pb-cart',JSON.stringify(cart));}catch(e){}}
+  function count(){return cart.reduce(function(a,i){return a+i.q;},0);}
+  function total(){return cart.reduce(function(a,i){return a+i.q*i.p;},0);}
+  function toast(t){var el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('on');},1600);}
+  function add(name,price){var f=cart.filter(function(i){return i.n===name;})[0];if(f)f.q++;else cart.push({n:name,p:price,q:1});save();render();toast('Añadido: '+name.replace(/ \(.*/,''));}
+  function render(){
+    var c=count();
+    document.querySelectorAll('.badge').forEach(function(b){b.textContent=c;b.dataset.n=c;});
+    var body=document.getElementById('cart-body'), foot=document.getElementById('cart-foot');
+    if(!cart.length){body.innerHTML='<div class="empty"><p>Tu orden está vacía.<br>Añade almuerzos, productos por libra o postres desde el menú.</p><button class="btn grad" type="button" data-close data-go="menu">Ver el menú</button></div>';foot.hidden=true;}
+    else{foot.hidden=false;body.innerHTML=cart.map(function(i,k){return '<div class="line"><b>'+i.n+'</b><span class="lp">'+money(i.p*i.q)+'</span><div class="qty"><button type="button" data-dec="'+k+'" aria-label="Quitar uno">−</button><span>'+i.q+'</span><button type="button" data-inc="'+k+'" aria-label="Añadir uno">+</button></div></div>';}).join('');}
+    document.getElementById('cart-total').textContent=money(total());
+    orderLink();
+  }
+  function orderLink(){
+    var del=(vals('cart','entrega')[0]||'Recoger')==='Delivery';
+    document.getElementById('addr-f').hidden=!del;
+    var m='Hola, quiero hacer esta orden:\n'+cart.map(function(i){return '- '+i.q+' x '+i.n+' '+money(i.p*i.q);}).join('\n')+
+      '\nTotal estimado: '+money(total())+'\nEntrega: '+(del?'Delivery a '+(v('o-dir')||'(dirección)'):'Recoger')+
+      (v('o-nombre')?'\nNombre: '+v('o-nombre'):'')+(v('o-nota')?'\nNota: '+v('o-nota'):'');
+    document.getElementById('o-send').href='https://wa.me/19392312872?text='+encodeURIComponent(m);
+  }
+  var sheet=document.getElementById('cart'), lastFocus;
+  function openCart(){document.getElementById('toast').classList.remove('on');lastFocus=document.activeElement;sheet.hidden=false;document.body.style.overflow='hidden';sheet.querySelector('.x').focus();}
+  function closeCart(){sheet.hidden=true;document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-add]'); if(a){add(a.dataset.add,parseFloat(a.dataset.price));return;}
+    if(e.target.closest('[data-cart]')){openCart();return;}
+    var inc=e.target.closest('[data-inc]'),dec=e.target.closest('[data-dec]');
+    if(inc){cart[+inc.dataset.inc].q++;save();render();return;}
+    if(dec){var k=+dec.dataset.dec;cart[k].q--;if(cart[k].q<1)cart.splice(k,1);save();render();return;}
+    var cl=e.target.closest('[data-close]'); if(cl){closeCart();if(cl.dataset.go){var t=document.getElementById(cl.dataset.go);if(t)t.scrollIntoView({block:'start'});}}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeCart();});
+  ['o-dir','o-nombre','o-nota'].forEach(function(id){document.getElementById(id).addEventListener('input',orderLink);});
+
+  window.__ol=orderLink;
+  render();
+  /* views */
+  var views={'parrilla':document.getElementById('parrilla'),'club-brava':document.getElementById('club-brava')};
+  var current='parrilla';
+  function show(){
+    var h=(location.hash||'').slice(1); current=views[h]?h:'parrilla';
+    Object.keys(views).forEach(function(k){views[k].hidden=k!==current;});
+    document.body.classList.toggle('club',current==='club-brava');
+    document.querySelectorAll('.switch a').forEach(function(a){a.dataset.view===current?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current');});
+    document.querySelector('.links').style.visibility=current==='parrilla'?'visible':'hidden';
+    document.title=current==='club-brava'?'Club Brava Restaurant · Chef Lando Aponte':'La Parrilla Brava · Lechonera en Naguabo';
+    window.scrollTo(0,0); setTimeout(function(){window.scrollTo(0,0);},0);
+  }
+  window.addEventListener('hashchange',show); show();
+
+  /* scroll buttons */
+  document.querySelectorAll('[data-go]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=(current==='club-brava'&&b.dataset.goClub)?b.dataset.goClub:b.dataset.go;
+      var t=document.getElementById(id); if(t) t.scrollIntoView({block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
